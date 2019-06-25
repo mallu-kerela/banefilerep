@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="BAN_FILE_REPAIR">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/BAN_FILE_REPAIR.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
