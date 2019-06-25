@@ -155,7 +155,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="99" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="~~~~~ BANGLES FILE REPAIR ~~~~~"/>
+        <Property name="text" type="java.lang.String" value="~~~~~ BANGLES FILE REPAIR [VERSION 2.2] ~~~~~"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JLayeredPane" name="jLayeredPane1">

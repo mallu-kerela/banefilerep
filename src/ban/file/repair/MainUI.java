@@ -61,7 +61,7 @@ public class MainUI extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 0, 153));
-        jLabel1.setText("~~~~~ BANGLES FILE REPAIR ~~~~~");
+        jLabel1.setText("~~~~~ BANGLES FILE REPAIR [VERSION 2.2] ~~~~~");
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
