@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.regex.Pattern;
 
 /**
  *
@@ -273,6 +272,7 @@ public class HelperClass {
 
     }
 
+
     public static void getDeletedData(ArrayList<String> fileLines, File file)
     {
         ArrayList<Integer> steps = new ArrayList<>();
@@ -304,6 +304,8 @@ public class HelperClass {
             e.printStackTrace();
         }
     }
+
+
 
     public static void deletePartMode(ArrayList<File> banFiles)
     {
@@ -566,7 +568,11 @@ public class HelperClass {
 
                 }
 
-                overriteFile(finalData, banFiles.get(i));
+                // need to delete unnecessary lines - only one line gap
+
+                ArrayList<String> finalDataAfterRemovingUnnecessaryLines = deleteUnnecessaryLines(finalData);
+
+                overriteFile(finalDataAfterRemovingUnnecessaryLines, banFiles.get(i));
 
             }catch(IOException e)
             {
@@ -578,6 +584,37 @@ public class HelperClass {
 
         }
     }
+
+
+    public static ArrayList<String> deleteUnnecessaryLines(ArrayList<String> data)
+    {
+        int flag = 0;
+        ArrayList<String> finalData = new ArrayList<>();
+        for(int i=0; i<data.size(); i++)
+        {
+            if(data.get(i).equals(""))
+            {
+                if(flag == 0)
+                {
+                    finalData.add(data.get(i));
+                    flag ++;
+                }
+                else
+                {
+                    flag++;
+                }
+            }
+            else
+            {
+                finalData.add(data.get(i));
+                flag = 0;
+            }
+
+
+        }
+        return finalData;
+    }
+
 
 
 

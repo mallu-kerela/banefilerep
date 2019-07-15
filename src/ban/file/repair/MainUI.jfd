@@ -1,0 +1,115 @@
+JFDML JFormDesigner: "7.0.0.2.222" Java: "1.8.0_202-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:40:p, par l {seq l {comp jScrollPane1:::p:556:p, space :::x}, seq l {par l {seq {comp jLabel2:::p::p, space :p:25:p, par l {comp jLabel4::l:p::p, comp jLabel3::l:p::p, comp jLabel5::l:p::p, seq l {comp ascendingButton:::p::p, space :p:113:p, comp descendingButton:::p::p}, comp jLabel6::l:p::p}, space :p:24:p, par l:::p {comp sequenceButton::::94:x, comp deleteButton::::94:x, comp deletePartButton::::94:x, comp partSequencerButton::::94:x, comp jButton1::l:::x}}, seq l {space :p:60:p, comp jLabel1:::p::p}, comp status::t:p:556:p}, space ::206:x, comp jLayeredPane1:::p::p}}}}"
+			"$verticalGroup": "par l {seq t {par l {seq {space :::p, comp jLabel1:::p::p, space :p:37:p, par b {comp jLabel2::b:p:30:p, comp ascendingButton::b:p::p, comp descendingButton::b:p::p, comp sequenceButton::b:p:25:p}}, seq l {space :p:25:p, comp jLayeredPane1:::p::p}}, space s:::p, par b {comp deleteButton::b:p:25:p, comp jLabel3::b:p:30:p}, space u:::p, par b {comp jLabel4::b:p:30:p, comp deletePartButton::b:p:25:p}, space s:::p, par l {comp partSequencerButton:::p:25:p, comp jLabel5:::p:30:p}, space u:::p, par t {comp jLabel6:::p:30:p, comp jButton1:::p:30:p}, space :p:23:p, comp status:::p:30:p, space ::30:x, comp jScrollPane1:::p:247:p, space :p:29:p}}"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			"background": new java.awt.Color( 102, 255, 102, 255 )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "jScrollPane1"
+				"foreground": new java.awt.Color( 0, 76, 143, 255 )
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea"
+					"columns": 20
+					"rows": 5
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "jLabel1"
+				"font": new java.awt.Font( "Arial Rounded MT Bold", 0, 24 )
+				"foreground": new java.awt.Color( 153, 0, 153, 255 )
+				"text": "~~~~~ BANGLES FILE REPAIR ~~~~~"
+			} )
+			add( new FormContainer( "javax.swing.JLayeredPane", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:163:x}"
+				"$verticalGroup": "par l {space :0:100:x}"
+			} ) {
+				name: "jLayeredPane1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "jLabel2"
+				"font": new java.awt.Font( "Franklin Gothic Book", 1, 18 )
+				"foreground": new java.awt.Color( 0, 102, 204, 255 )
+				"text": "SEQUENCER"
+			} )
+			add( new FormComponent( "javax.swing.JRadioButton" ) {
+				name: "ascendingButton"
+				"$buttonGroup": new FormReference( "buttonGroup1" )
+				"text": "MIN TO MAX"
+			} )
+			add( new FormComponent( "javax.swing.JRadioButton" ) {
+				name: "descendingButton"
+				"$buttonGroup": new FormReference( "buttonGroup1" )
+				"text": "MAX TO MIN"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "jLabel3"
+				"font": new java.awt.Font( "Franklin Gothic Book", 1, 18 )
+				"foreground": new java.awt.Color( 0, 102, 204, 255 )
+				"text": "DELETE LINES (LLLLL)"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "deleteButton"
+				"text": "START"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "deleteButtonActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "status"
+				"font": new java.awt.Font( "Times New Roman", 0, 18 )
+				"foreground": new java.awt.Color( 255, 51, 51, 255 )
+				"text": "Status"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "jLabel4"
+				"font": new java.awt.Font( "Franklin Gothic Book", 1, 18 )
+				"foreground": new java.awt.Color( 0, 102, 204, 255 )
+				"text": "DELETE PART (PPPPP)"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "deletePartButton"
+				"text": "START"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "deletePartButtonActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "jLabel5"
+				"font": new java.awt.Font( "Franklin Gothic Book", 1, 18 )
+				"foreground": new java.awt.Color( 0, 102, 204, 255 )
+				"text": "PAIR SEQUENCER [%PAIR]"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "partSequencerButton"
+				"text": "START"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "partSequencerButtonActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "sequenceButton"
+				"text": "START"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "sequenceButtonActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "jLabel6"
+				"font": new java.awt.Font( "Franklin Gothic Book", 1, 18 )
+				"foreground": new java.awt.Color( 0, 102, 204, 255 )
+				"text": "REMOVE Y VALUES"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "jButton1"
+				"text": "START"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButton1ActionPerformed", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+		add( new FormNonVisual( "javax.swing.ButtonGroup" ) {
+			name: "buttonGroup1"
+		} )
+		add( new FormNonVisual( "javax.swing.ButtonGroup" ) {
+			name: "buttonGroup2"
+		} )
+	}
+}
