@@ -66,7 +66,7 @@ public class MainUI extends javax.swing.JFrame {
         }
 
         //---- jLabel1 ----
-        jLabel1.setText("~~~~~ BANGLES FILE REPAIR VER 2.3 ~~~~~");
+        jLabel1.setText("~~~~~ BANGLES FILE REPAIR VER 2.4 ~~~~~");
 
         //======== jLayeredPane1 ========
         {
