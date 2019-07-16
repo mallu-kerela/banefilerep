@@ -217,11 +217,35 @@ public class HelperClass {
         {
             finalData.add(dataWithoutSequence.get(i));
         }
-        
+
+
+        finalData = addM0AfterM3(finalData);
 
            
         return finalData;
         
+    }
+
+    // This function is part of sequence and sort and adds an M0 just after M3
+    public static ArrayList<String> addM0AfterM3(ArrayList<String> almostFinalData) {
+        String mTHREE = "M3";
+        String mZERO = "M0";
+        ArrayList<String> finalData = new ArrayList<>();
+        boolean flag = false;
+
+        for (int i = 0; i < almostFinalData.size(); i++) {
+
+            finalData.add(almostFinalData.get(i));
+            if (almostFinalData.get(i).equals(mTHREE)) {
+                if (!flag) {
+                    finalData.add(mZERO);
+                    flag = true;
+                }
+            }
+        }
+
+        return finalData;
+
     }
     
     public static void overriteFile(ArrayList<String> finalData, File banFile) throws IOException
