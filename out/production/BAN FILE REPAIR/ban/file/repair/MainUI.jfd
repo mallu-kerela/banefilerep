@@ -1,115 +1,508 @@
-JFDML JFormDesigner: "7.0.0.2.222" Java: "1.8.0_202-release" encoding: "UTF-8"
-
-new FormModel {
-	contentType: "form/swing"
-	root: new FormRoot {
-		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:40:p, par l {seq l {comp jScrollPane1:::p:556:p, space :::x}, seq l {par l {seq {comp jLabel2:::p::p, space :p:25:p, par l {comp jLabel4::l:p::p, comp jLabel3::l:p::p, comp jLabel5::l:p::p, seq l {comp ascendingButton:::p::p, space :p:113:p, comp descendingButton:::p::p}, comp jLabel6::l:p::p}, space :p:24:p, par l:::p {comp sequenceButton::::94:x, comp deleteButton::::94:x, comp deletePartButton::::94:x, comp partSequencerButton::::94:x, comp jButton1::l:::x}}, seq l {space :p:60:p, comp jLabel1:::p::p}, comp status::t:p:556:p}, space ::206:x, comp jLayeredPane1:::p::p}}}}"
-			"$verticalGroup": "par l {seq t {par l {seq {space :::p, comp jLabel1:::p::p, space :p:37:p, par b {comp jLabel2::b:p:30:p, comp ascendingButton::b:p::p, comp descendingButton::b:p::p, comp sequenceButton::b:p:25:p}}, seq l {space :p:25:p, comp jLayeredPane1:::p::p}}, space s:::p, par b {comp deleteButton::b:p:25:p, comp jLabel3::b:p:30:p}, space u:::p, par b {comp jLabel4::b:p:30:p, comp deletePartButton::b:p:25:p}, space s:::p, par l {comp partSequencerButton:::p:25:p, comp jLabel5:::p:30:p}, space u:::p, par t {comp jLabel6:::p:30:p, comp jButton1:::p:30:p}, space :p:23:p, comp status:::p:30:p, space ::30:x, comp jScrollPane1:::p:247:p, space :p:29:p}}"
-		} ) {
-			name: "this"
-			"defaultCloseOperation": 3
-			"background": new java.awt.Color( 102, 255, 102, 255 )
-			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-				name: "jScrollPane1"
-				"foreground": new java.awt.Color( 0, 76, 143, 255 )
-				add( new FormComponent( "javax.swing.JTextArea" ) {
-					name: "textArea"
-					"columns": 20
-					"rows": 5
-				} )
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "jLabel1"
-				"font": new java.awt.Font( "Arial Rounded MT Bold", 0, 24 )
-				"foreground": new java.awt.Color( 153, 0, 153, 255 )
-				"text": "~~~~~ BANGLES FILE REPAIR ~~~~~"
-			} )
-			add( new FormContainer( "javax.swing.JLayeredPane", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {space :0:163:x}"
-				"$verticalGroup": "par l {space :0:100:x}"
-			} ) {
-				name: "jLayeredPane1"
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "jLabel2"
-				"font": new java.awt.Font( "Franklin Gothic Book", 1, 18 )
-				"foreground": new java.awt.Color( 0, 102, 204, 255 )
-				"text": "SEQUENCER"
-			} )
-			add( new FormComponent( "javax.swing.JRadioButton" ) {
-				name: "ascendingButton"
-				"$buttonGroup": new FormReference( "buttonGroup1" )
-				"text": "MIN TO MAX"
-			} )
-			add( new FormComponent( "javax.swing.JRadioButton" ) {
-				name: "descendingButton"
-				"$buttonGroup": new FormReference( "buttonGroup1" )
-				"text": "MAX TO MIN"
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "jLabel3"
-				"font": new java.awt.Font( "Franklin Gothic Book", 1, 18 )
-				"foreground": new java.awt.Color( 0, 102, 204, 255 )
-				"text": "DELETE LINES (LLLLL)"
-			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "deleteButton"
-				"text": "START"
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "deleteButtonActionPerformed", true ) )
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "status"
-				"font": new java.awt.Font( "Times New Roman", 0, 18 )
-				"foreground": new java.awt.Color( 255, 51, 51, 255 )
-				"text": "Status"
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "jLabel4"
-				"font": new java.awt.Font( "Franklin Gothic Book", 1, 18 )
-				"foreground": new java.awt.Color( 0, 102, 204, 255 )
-				"text": "DELETE PART (PPPPP)"
-			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "deletePartButton"
-				"text": "START"
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "deletePartButtonActionPerformed", true ) )
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "jLabel5"
-				"font": new java.awt.Font( "Franklin Gothic Book", 1, 18 )
-				"foreground": new java.awt.Color( 0, 102, 204, 255 )
-				"text": "PAIR SEQUENCER [%PAIR]"
-			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "partSequencerButton"
-				"text": "START"
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "partSequencerButtonActionPerformed", true ) )
-			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "sequenceButton"
-				"text": "START"
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "sequenceButtonActionPerformed", true ) )
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "jLabel6"
-				"font": new java.awt.Font( "Franklin Gothic Book", 1, 18 )
-				"foreground": new java.awt.Color( 0, 102, 204, 255 )
-				"text": "REMOVE Y VALUES"
-			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "jButton1"
-				"text": "START"
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButton1ActionPerformed", true ) )
-			} )
-		}, new FormLayoutConstraints( null ) {
-			"size": new java.awt.Dimension( 400, 300 )
-		} )
-		add( new FormNonVisual( "javax.swing.ButtonGroup" ) {
-			name: "buttonGroup1"
-		} )
-		add( new FormNonVisual( "javax.swing.ButtonGroup" ) {
-			name: "buttonGroup2"
-		} )
-	}
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_202-release" class="java.beans.XMLDecoder">
+ <object class="com.jformdesigner.model.FormModel">
+  <void property="contentType">
+   <string>form/swing</string>
+  </void>
+  <void property="root">
+   <object class="com.jformdesigner.model.FormRoot">
+    <void method="add">
+     <object class="com.jformdesigner.model.FormWindow">
+      <string>javax.swing.JFrame</string>
+      <object class="com.jformdesigner.model.FormLayoutManager">
+       <class>org.jdesktop.layout.GroupLayout</class>
+       <void method="setProperty">
+        <string>$horizontalGroup</string>
+        <string>par l {seq {par l {seq {space :p:40:p, par l {comp jScrollPane1::l:p:556:p, seq {space :p:75:p, par l {comp sequencerTF::l:p::p, seq l {space :p:123:p, comp ascendingButton:::p::p}, seq l {par l {seq {space :p:254:p, comp descendingButton:::p::p, space :p:22:p}, seq t {par l {comp jLabel4:::p::p, comp jLabel6::l:p::p, comp jLabel3::l:p::p, comp jLabel5:::p::p, comp jLabel7::l:p::p}, space :p:11:p, comp incDecTextField:::p:58:p, space u:::p}}, par l {comp incDecPlus:::p:94:p, comp deleteButton:::p:94:p, comp sequenceButton:::p:92:p, comp deletePartButton::l:p:94:p, comp partSequencerButton::l:p:94:p, comp jButton1::l:p:94:p}}}}, comp status::l:p:556:p}}, seq l {space :p:221:p, comp jLabel1:::p::p}}, space ::67:x}, seq t {space :0:289:x, comp jLabel2:::p::p, space :p:285:p}}</string>
+       </void>
+       <void method="setProperty">
+        <string>$verticalGroup</string>
+        <string>par l {seq t {space :::p, comp jLabel1:::p::p, space :::p, comp jLabel2:::p::p, space :p:26:p, par b {comp descendingButton::b:p::p, comp sequencerTF::b:p:30:p, comp ascendingButton::b:p::p, comp sequenceButton::b:p:25:p}, space s:::p, par b {comp jLabel3::b:p:30:p, comp deleteButton::b:p:25:p}, space u:::p, par b {comp jLabel4::b:p:30:p, comp deletePartButton::b:p:25:p}, space u:::p, par b {comp jLabel5::b:p:30:p, comp partSequencerButton::b:p:25:p}, space :p:13:p, par t {comp jButton1:::p:30:p, comp jLabel6:::p:30:p}, space u:::p, par b {comp jLabel7::b:p:30:p, comp incDecPlus::b:p:30:p, comp incDecTextField::b:p:28:p}, space ::39:x, comp status:::p:30:p, space s:::p, comp jScrollPane1:::p:247:p, space :p:29:p}}</string>
+       </void>
+      </object>
+      <void method="setProperty">
+       <string>defaultCloseOperation</string>
+       <int>3</int>
+      </void>
+      <void method="setProperty">
+       <string>background</string>
+       <object class="java.awt.Color">
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>255</int>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormContainer">
+        <string>javax.swing.JScrollPane</string>
+        <object class="com.jformdesigner.model.FormLayoutManager">
+         <class>javax.swing.JScrollPane</class>
+        </object>
+        <void method="setProperty">
+         <string>foreground</string>
+         <object class="java.awt.Color">
+          <int>0</int>
+          <int>76</int>
+          <int>143</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void property="name">
+         <string>jScrollPane1</string>
+        </void>
+        <void method="add">
+         <object class="com.jformdesigner.model.FormComponent">
+          <string>javax.swing.JTextArea</string>
+          <void method="setProperty">
+           <string>columns</string>
+           <int>20</int>
+          </void>
+          <void method="setProperty">
+           <string>rows</string>
+           <int>5</int>
+          </void>
+          <void property="name">
+           <string>textArea</string>
+          </void>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JLabel</string>
+        <void method="setProperty">
+         <string>font</string>
+         <object class="java.awt.Font">
+          <string>Malgun Gothic</string>
+          <int>1</int>
+          <int>24</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>foreground</string>
+         <object class="java.awt.Color" id="Color0">
+          <int>51</int>
+          <int>51</int>
+          <int>0</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>text</string>
+         <string>Ban File Repair VER 5</string>
+        </void>
+        <void property="name">
+         <string>jLabel1</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JLabel</string>
+        <void method="setProperty">
+         <string>font</string>
+         <object class="java.awt.Font">
+          <string>Malgun Gothic</string>
+          <int>1</int>
+          <int>20</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>foreground</string>
+         <object class="java.awt.Color">
+          <int>0</int>
+          <int>102</int>
+          <int>204</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>text</string>
+         <string>Sequencer</string>
+        </void>
+        <void property="name">
+         <string>sequencerTF</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JRadioButton</string>
+        <void method="setProperty">
+         <string>text</string>
+         <string>MIN TO MAX</string>
+        </void>
+        <void property="name">
+         <string>ascendingButton</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JRadioButton</string>
+        <void method="setProperty">
+         <string>text</string>
+         <string>MAX TO MIN</string>
+        </void>
+        <void property="name">
+         <string>descendingButton</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JLabel</string>
+        <void method="setProperty">
+         <string>font</string>
+         <object class="java.awt.Font">
+          <string>Malgun Gothic</string>
+          <int>1</int>
+          <int>20</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>foreground</string>
+         <object class="java.awt.Color">
+          <int>0</int>
+          <int>102</int>
+          <int>204</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>text</string>
+         <string>Delete Lines (LLLLL)</string>
+        </void>
+        <void property="name">
+         <string>jLabel3</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JButton</string>
+        <void method="setProperty">
+         <string>text</string>
+         <string>START</string>
+        </void>
+        <void property="name">
+         <string>deleteButton</string>
+        </void>
+        <void method="addEvent">
+         <object class="com.jformdesigner.model.FormEvent">
+          <string>java.awt.event.ActionListener</string>
+          <string>actionPerformed</string>
+          <string>deleteButtonActionPerformed</string>
+          <boolean>true</boolean>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JLabel</string>
+        <void method="setProperty">
+         <string>font</string>
+         <object class="java.awt.Font">
+          <string>Times New Roman</string>
+          <int>0</int>
+          <int>18</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>foreground</string>
+         <object class="java.awt.Color">
+          <int>255</int>
+          <int>51</int>
+          <int>51</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>text</string>
+         <string>Status</string>
+        </void>
+        <void property="name">
+         <string>status</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JLabel</string>
+        <void method="setProperty">
+         <string>font</string>
+         <object class="java.awt.Font">
+          <string>Malgun Gothic</string>
+          <int>1</int>
+          <int>20</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>foreground</string>
+         <object class="java.awt.Color">
+          <int>0</int>
+          <int>102</int>
+          <int>204</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>text</string>
+         <string>Delete Part (PPPPP)</string>
+        </void>
+        <void property="name">
+         <string>jLabel4</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JButton</string>
+        <void method="setProperty">
+         <string>text</string>
+         <string>START</string>
+        </void>
+        <void property="name">
+         <string>deletePartButton</string>
+        </void>
+        <void method="addEvent">
+         <object class="com.jformdesigner.model.FormEvent">
+          <string>java.awt.event.ActionListener</string>
+          <string>actionPerformed</string>
+          <string>deletePartButtonActionPerformed</string>
+          <boolean>true</boolean>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JLabel</string>
+        <void method="setProperty">
+         <string>font</string>
+         <object class="java.awt.Font">
+          <string>Malgun Gothic</string>
+          <int>1</int>
+          <int>20</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>foreground</string>
+         <object class="java.awt.Color">
+          <int>0</int>
+          <int>102</int>
+          <int>204</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>text</string>
+         <string>Pair Sequencer [%PAIR]</string>
+        </void>
+        <void property="name">
+         <string>jLabel5</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JButton</string>
+        <void method="setProperty">
+         <string>text</string>
+         <string>START</string>
+        </void>
+        <void property="name">
+         <string>partSequencerButton</string>
+        </void>
+        <void method="addEvent">
+         <object class="com.jformdesigner.model.FormEvent">
+          <string>java.awt.event.ActionListener</string>
+          <string>actionPerformed</string>
+          <string>partSequencerButtonActionPerformed</string>
+          <boolean>true</boolean>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JButton</string>
+        <void method="setProperty">
+         <string>text</string>
+         <string>START</string>
+        </void>
+        <void property="name">
+         <string>sequenceButton</string>
+        </void>
+        <void method="addEvent">
+         <object class="com.jformdesigner.model.FormEvent">
+          <string>java.awt.event.ActionListener</string>
+          <string>actionPerformed</string>
+          <string>sequenceButtonActionPerformed</string>
+          <boolean>true</boolean>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JLabel</string>
+        <void method="setProperty">
+         <string>font</string>
+         <object class="java.awt.Font" id="Font0">
+          <string>Malgun Gothic</string>
+          <int>1</int>
+          <int>20</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>foreground</string>
+         <object class="java.awt.Color" id="Color1">
+          <int>0</int>
+          <int>102</int>
+          <int>204</int>
+          <int>255</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>text</string>
+         <string>Remove Y Values</string>
+        </void>
+        <void property="name">
+         <string>jLabel6</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JButton</string>
+        <void method="setProperty">
+         <string>text</string>
+         <string>START</string>
+        </void>
+        <void property="name">
+         <string>jButton1</string>
+        </void>
+        <void method="addEvent">
+         <object class="com.jformdesigner.model.FormEvent">
+          <string>java.awt.event.ActionListener</string>
+          <string>actionPerformed</string>
+          <string>removeYValuesPerformed</string>
+          <boolean>true</boolean>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent" id="FormComponent0">
+        <string>javax.swing.JLabel</string>
+        <void method="setProperty">
+         <string>font</string>
+         <object idref="Font0"/>
+        </void>
+        <void method="setProperty">
+         <string>foreground</string>
+         <object idref="Color1"/>
+        </void>
+        <void method="setProperty">
+         <string>text</string>
+         <string>Plus Minus(Q5[up] W5[down])</string>
+        </void>
+        <void property="name">
+         <string>jLabel7</string>
+        </void>
+        <void method="auxiliary">
+         <void method="setProperty">
+          <string>JavaCodeGenerator.variableName</string>
+          <string>plusMinusLabel</string>
+         </void>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JTextField</string>
+        <void property="name">
+         <string>incDecTextField</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent" id="FormComponent1">
+        <string>javax.swing.JButton</string>
+        <void method="setProperty">
+         <string>text</string>
+         <string>START</string>
+        </void>
+        <void property="name">
+         <string>incDecPlus</string>
+        </void>
+        <void method="auxiliary">
+         <void method="setProperty">
+          <string>JavaCodeGenerator.variableName</string>
+          <string>incPlus</string>
+         </void>
+        </void>
+        <void method="addEvent">
+         <object class="com.jformdesigner.model.FormEvent">
+          <string>java.awt.event.ActionListener</string>
+          <string>actionPerformed</string>
+          <string>incValuePerformed</string>
+          <boolean>true</boolean>
+         </object>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="com.jformdesigner.model.FormComponent">
+        <string>javax.swing.JLabel</string>
+        <void method="setProperty">
+         <string>font</string>
+         <object class="java.awt.Font">
+          <string>Malgun Gothic</string>
+          <int>1</int>
+          <int>18</int>
+         </object>
+        </void>
+        <void method="setProperty">
+         <string>foreground</string>
+         <object idref="Color0"/>
+        </void>
+        <void method="setProperty">
+         <string>text</string>
+         <string>Manu Jain</string>
+        </void>
+        <void property="name">
+         <string>jLabel2</string>
+        </void>
+       </object>
+      </void>
+      <void property="name">
+       <string>this</string>
+      </void>
+     </object>
+     <object class="com.jformdesigner.model.FormLayoutConstraints">
+      <null/>
+      <void method="setProperty">
+       <string>size</string>
+       <object class="java.awt.Dimension">
+        <int>665</int>
+        <int>750</int>
+       </object>
+      </void>
+      <void method="setProperty">
+       <string>location</string>
+       <object class="java.awt.Point">
+        <int>0</int>
+        <int>0</int>
+       </object>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

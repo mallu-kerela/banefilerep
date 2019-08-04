@@ -6,6 +6,7 @@
 package ban.file.repair;
 
 import java.awt.*;
+import java.awt.event.*;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -21,6 +22,7 @@ public class MainUI extends javax.swing.JFrame {
     /**
      * Creates new form MainUI
      */
+
     public MainUI() {
         initComponents();
     }
@@ -32,13 +34,12 @@ public class MainUI extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    // Generated using JFormDesigner Evaluation license - unknown
+    // Generated using JFormDesigner Evaluation license - Manu Jain
     private void initComponents() {
         jScrollPane1 = new JScrollPane();
         textArea = new JTextArea();
         jLabel1 = new JLabel();
-        jLayeredPane1 = new JLayeredPane();
-        jLabel2 = new JLabel();
+        sequencerTF = new JLabel();
         ascendingButton = new JRadioButton();
         descendingButton = new JRadioButton();
         jLabel3 = new JLabel();
@@ -51,13 +52,19 @@ public class MainUI extends javax.swing.JFrame {
         sequenceButton = new JButton();
         jLabel6 = new JLabel();
         jButton1 = new JButton();
+        plusMinusLabel = new JLabel();
+        incDecTextField = new JTextField();
+        incPlus = new JButton();
+        jLabel2 = new JLabel();
 
         //======== this ========
-        setDefaultCloseOperation(3);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setBackground(Color.black);
         Container contentPane = getContentPane();
 
         //======== jScrollPane1 ========
         {
+            jScrollPane1.setForeground(new Color(0, 76, 143));
 
             //---- textArea ----
             textArea.setColumns(20);
@@ -66,25 +73,14 @@ public class MainUI extends javax.swing.JFrame {
         }
 
         //---- jLabel1 ----
-        jLabel1.setText("~~~~~ BANGLES FILE REPAIR VER 2.4 ~~~~~");
+        jLabel1.setFont(new Font("Malgun Gothic", Font.BOLD, 24));
+        jLabel1.setForeground(new Color(51, 51, 0));
+        jLabel1.setText("Ban File Repair VER 5");
 
-        //======== jLayeredPane1 ========
-        {
-
-            GroupLayout jLayeredPane1Layout = new GroupLayout(jLayeredPane1);
-            jLayeredPane1.setLayout(jLayeredPane1Layout);
-            jLayeredPane1Layout.setHorizontalGroup(
-                jLayeredPane1Layout.createParallelGroup()
-                    .addGap(0, 163, Short.MAX_VALUE)
-            );
-            jLayeredPane1Layout.setVerticalGroup(
-                jLayeredPane1Layout.createParallelGroup()
-                    .addGap(0, 100, Short.MAX_VALUE)
-            );
-        }
-
-        //---- jLabel2 ----
-        jLabel2.setText("SEQUENCER");
+        //---- sequencerTF ----
+        sequencerTF.setFont(new Font("Malgun Gothic", Font.BOLD, 20));
+        sequencerTF.setForeground(new Color(0, 102, 204));
+        sequencerTF.setText("Sequencer");
 
         //---- ascendingButton ----
         ascendingButton.setText("MIN TO MAX");
@@ -93,24 +89,32 @@ public class MainUI extends javax.swing.JFrame {
         descendingButton.setText("MAX TO MIN");
 
         //---- jLabel3 ----
-        jLabel3.setText("DELETE LINES (LLLLL)");
+        jLabel3.setFont(new Font("Malgun Gothic", Font.BOLD, 20));
+        jLabel3.setForeground(new Color(0, 102, 204));
+        jLabel3.setText("Delete Lines (LLLLL)");
 
         //---- deleteButton ----
         deleteButton.setText("START");
         deleteButton.addActionListener(e -> deleteButtonActionPerformed(e));
 
         //---- status ----
+        status.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        status.setForeground(new Color(255, 51, 51));
         status.setText("Status");
 
         //---- jLabel4 ----
-        jLabel4.setText("DELETE PART (PPPPP)");
+        jLabel4.setFont(new Font("Malgun Gothic", Font.BOLD, 20));
+        jLabel4.setForeground(new Color(0, 102, 204));
+        jLabel4.setText("Delete Part (PPPPP)");
 
         //---- deletePartButton ----
         deletePartButton.setText("START");
         deletePartButton.addActionListener(e -> deletePartButtonActionPerformed(e));
 
         //---- jLabel5 ----
-        jLabel5.setText("PAIR SEQUENCER [%PAIR]");
+        jLabel5.setFont(new Font("Malgun Gothic", Font.BOLD, 20));
+        jLabel5.setForeground(new Color(0, 102, 204));
+        jLabel5.setText("Pair Sequencer [%PAIR]");
 
         //---- partSequencerButton ----
         partSequencerButton.setText("START");
@@ -121,100 +125,123 @@ public class MainUI extends javax.swing.JFrame {
         sequenceButton.addActionListener(e -> sequenceButtonActionPerformed(e));
 
         //---- jLabel6 ----
-        jLabel6.setText("REMOVE Y VALUES");
+        jLabel6.setFont(new Font("Malgun Gothic", Font.BOLD, 20));
+        jLabel6.setForeground(new Color(0, 102, 204));
+        jLabel6.setText("Remove Y Values");
 
         //---- jButton1 ----
         jButton1.setText("START");
-        jButton1.addActionListener(e -> jButton1ActionPerformed(e));
+        jButton1.addActionListener(e -> removeYValuesPerformed(e));
+
+        //---- plusMinusLabel ----
+        plusMinusLabel.setFont(new Font("Malgun Gothic", Font.BOLD, 20));
+        plusMinusLabel.setForeground(new Color(0, 102, 204));
+        plusMinusLabel.setText("Plus Minus(Q5[up] W5[down])");
+
+        //---- incPlus ----
+        incPlus.setText("START");
+        incPlus.addActionListener(e -> incValuePerformed(e));
+
+        //---- jLabel2 ----
+        jLabel2.setFont(new Font("Malgun Gothic", Font.BOLD, 18));
+        jLabel2.setForeground(new Color(51, 51, 0));
+        jLabel2.setText("Manu Jain");
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(40, 40, 40)
                     .addGroup(contentPaneLayout.createParallelGroup()
                         .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 556, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap())
-                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addGap(40, 40, 40)
                             .addGroup(contentPaneLayout.createParallelGroup()
+                                .addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 556, GroupLayout.PREFERRED_SIZE)
                                 .addGroup(contentPaneLayout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(25, 25, 25)
+                                    .addGap(75, 75, 75)
                                     .addGroup(contentPaneLayout.createParallelGroup()
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel5)
+                                        .addComponent(sequencerTF)
                                         .addGroup(contentPaneLayout.createSequentialGroup()
-                                            .addComponent(ascendingButton)
-                                            .addGap(113, 113, 113)
-                                            .addComponent(descendingButton))
-                                        .addComponent(jLabel6))
-                                    .addGap(24, 24, 24)
-                                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(sequenceButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                                        .addComponent(deleteButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                                        .addComponent(deletePartButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                                        .addComponent(partSequencerButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                                        .addComponent(jButton1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(contentPaneLayout.createSequentialGroup()
-                                    .addGap(60, 60, 60)
-                                    .addComponent(jLabel1))
-                                .addComponent(status, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 556, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
-                            .addComponent(jLayeredPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+                                            .addGap(123, 123, 123)
+                                            .addComponent(ascendingButton))
+                                        .addGroup(contentPaneLayout.createSequentialGroup()
+                                            .addGroup(contentPaneLayout.createParallelGroup()
+                                                .addGroup(contentPaneLayout.createSequentialGroup()
+                                                    .addGap(254, 254, 254)
+                                                    .addComponent(descendingButton)
+                                                    .addGap(22, 22, 22))
+                                                .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                                                    .addGroup(contentPaneLayout.createParallelGroup()
+                                                        .addComponent(jLabel4)
+                                                        .addComponent(jLabel6)
+                                                        .addComponent(jLabel3)
+                                                        .addComponent(jLabel5)
+                                                        .addComponent(plusMinusLabel))
+                                                    .addGap(11, 11, 11)
+                                                    .addComponent(incDecTextField, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)))
+                                            .addGroup(contentPaneLayout.createParallelGroup()
+                                                .addComponent(incPlus, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(deleteButton, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(sequenceButton, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(deletePartButton, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(partSequencerButton, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(status, GroupLayout.PREFERRED_SIZE, 556, GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addGap(221, 221, 221)
+                            .addComponent(jLabel1)))
+                    .addContainerGap(67, Short.MAX_VALUE))
+                .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                    .addGap(0, 289, Short.MAX_VALUE)
+                    .addComponent(jLabel2)
+                    .addGap(285, 285, 285))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
-                    .addGroup(contentPaneLayout.createParallelGroup()
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel1)
-                            .addGap(37, 37, 37)
-                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ascendingButton)
-                                .addComponent(descendingButton)
-                                .addComponent(sequenceButton, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(25, 25, 25)
-                            .addComponent(jLayeredPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap()
+                    .addComponent(jLabel1)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel2)
+                    .addGap(26, 26, 26)
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(descendingButton)
+                        .addComponent(sequencerTF, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ascendingButton)
+                        .addComponent(sequenceButton, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(deleteButton, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(deleteButton, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                         .addComponent(deletePartButton, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addGroup(contentPaneLayout.createParallelGroup()
-                        .addComponent(partSequencerButton, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(partSequencerButton, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+                    .addGap(13, 13, 13)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-                    .addGap(23, 23, 23)
+                        .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(plusMinusLabel, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(incPlus, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(incDecTextField, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                     .addComponent(status, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                    .addGap(18, 18, 18)
                     .addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 247, GroupLayout.PREFERRED_SIZE)
                     .addGap(29, 29, 29))
         );
         pack();
         setLocationRelativeTo(getOwner());
-
-        //---- buttonGroup1 ----
-        ButtonGroup buttonGroup1 = new ButtonGroup();
-        buttonGroup1.add(ascendingButton);
-        buttonGroup1.add(descendingButton);
     }// </editor-fold>//GEN-END:initComponents
 
     private void sequenceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sequenceButtonActionPerformed
-        // TODO add your handling code here:
-       
        basicInit();
        if(sequencerMode == 0)
            status.setText("Select MIN MAX MODE");
@@ -235,8 +262,6 @@ public class MainUI extends javax.swing.JFrame {
     }//GEN-LAST:event_sequenceButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        // TODO add your handling code here:
-
         basicInit();
         if(banFiles.size() == 0)
             status.setText("Zero BAN Files Present");
@@ -253,8 +278,6 @@ public class MainUI extends javax.swing.JFrame {
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void deletePartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePartButtonActionPerformed
-        // TODO add your handling code here:
-
         basicInit();
         if(banFiles.size() == 0)
             status.setText("Zero BAN Files Present");
@@ -269,7 +292,6 @@ public class MainUI extends javax.swing.JFrame {
     }//GEN-LAST:event_deletePartButtonActionPerformed
 
     private void partSequencerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partSequencerButtonActionPerformed
-        // TODO add your handling code here:
         basicInit();
         if(banFiles.size() == 0)
             status.setText("Zero BAN Files Present");
@@ -282,8 +304,7 @@ public class MainUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_partSequencerButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    private void removeYValuesPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         basicInit();
         if(banFiles.size() == 0)
             status.setText("Zero BAN Files Present");
@@ -294,7 +315,24 @@ public class MainUI extends javax.swing.JFrame {
             fileStatusUpdate();
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
+
+    private void incValuePerformed(ActionEvent e) {
+
+        if(incDecTextField.getText().equals(""))
+            return;
+
+        basicInit();
+        if(banFiles.size() == 0)
+            status.setText("Zero BAN Files Present");
+        else
+        {
+            Double value = Double.parseDouble(incDecTextField.getText());
+            HelperClass.incrementByValues(banFiles,value);
+            status.setText("Complete");
+            fileStatusUpdate();
+        }
+    }
 
     private void fileStatusUpdate()
     {
@@ -362,12 +400,11 @@ public class MainUI extends javax.swing.JFrame {
     public static ArrayList<File> filesOperated = new ArrayList<>();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - unknown
+    // Generated using JFormDesigner Evaluation license - Manu Jain
     private JScrollPane jScrollPane1;
     private JTextArea textArea;
     private JLabel jLabel1;
-    private JLayeredPane jLayeredPane1;
-    private JLabel jLabel2;
+    private JLabel sequencerTF;
     private JRadioButton ascendingButton;
     private JRadioButton descendingButton;
     private JLabel jLabel3;
@@ -380,5 +417,9 @@ public class MainUI extends javax.swing.JFrame {
     private JButton sequenceButton;
     private JLabel jLabel6;
     private JButton jButton1;
+    private JLabel plusMinusLabel;
+    private JTextField incDecTextField;
+    private JButton incPlus;
+    private JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
