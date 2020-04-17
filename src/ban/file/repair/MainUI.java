@@ -75,7 +75,7 @@ public class MainUI extends javax.swing.JFrame {
         //---- jLabel1 ----
         jLabel1.setFont(new Font("Malgun Gothic", Font.BOLD, 24));
         jLabel1.setForeground(new Color(51, 51, 0));
-        jLabel1.setText("Ban File Repair VER 5");
+        jLabel1.setText("Ban File Repair VER 5.3");
 
         //---- sequencerTF ----
         sequencerTF.setFont(new Font("Malgun Gothic", Font.BOLD, 20));
@@ -283,7 +283,7 @@ public class MainUI extends javax.swing.JFrame {
             status.setText("Zero BAN Files Present");
         else
         {
-            HelperClass.deletePartMode(banFiles);
+            HelperClass.deletePartModeVER_5_3(banFiles);
             status.setText("Complete");
             fileStatusUpdate();
         }

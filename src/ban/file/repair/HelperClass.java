@@ -12,8 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 /**
  * @author manuj
@@ -293,7 +292,9 @@ public class HelperClass {
         }
     }
 
-
+    /* deletePartMode - it does not delete stuff anymore
+       functionality was changed in VER_5.3
+     */
     public static void deletePartMode(ArrayList<File> banFiles) {
         for (int i = 0; i < banFiles.size(); i++) {
             System.out.println(banFiles.get(i).getName());
@@ -342,6 +343,7 @@ public class HelperClass {
         }
     }
 
+    @Deprecated
     private static void deletePairParts(ArrayList<String> fileLines, File file, ArrayList<Integer> pSteps) {
         ArrayList<String> finalData = new ArrayList<>();
         int x = 0;
@@ -377,6 +379,92 @@ public class HelperClass {
         }
 
     }
+
+    /* deletePartMode - new functionality
+    Adding some data to pairs
+    take a pair PPPPP and first 3 lines before that, and 2 lines after that
+    */
+    public static void deletePartModeVER_5_3(ArrayList<File> banFiles) {
+        for (int i = 0; i < banFiles.size(); i++) {
+            System.out.println(banFiles.get(i).getName());
+            ArrayList<String> fileLines = new ArrayList();
+            ArrayList<String> finalData;
+            ArrayList<Integer> pairIndex = new ArrayList<>();
+            File file = banFiles.get(i);
+            BufferedReader reader;
+            try {
+                reader = new BufferedReader(new FileReader(file.getAbsolutePath()));
+                String line = reader.readLine();
+                while (line != null) {
+                    fileLines.add(line);
+                    line = reader.readLine();
+
+                }
+                reader.close();
+
+                for (int p = 0; p < fileLines.size(); p++) {
+                    if (fileLines.get(p).contains("PPPPP")) {
+                        pairIndex.add(p);
+                        System.out.println(p);
+                    }
+                }
+
+                if (pairIndex.size() % 2 != 0)
+                    continue;
+                else
+                    MainUI.filesOperated.add(banFiles.get(i));
+
+                finalData = deletePairPartsVER_5_3(fileLines, pairIndex);
+
+                overriteFile(finalData, banFiles.get(i));
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if (fileLines != null)
+                fileLines.clear();
+
+        }
+    }
+
+
+    private static ArrayList<String> deletePairPartsVER_5_3(ArrayList<String> fileLines, ArrayList<Integer> pairIndex) {
+
+        String prefix = "%.";
+
+        // subtracting the odd index with 3 and adding even index with 2 for a new pair indexes
+        for(int i=0; i<pairIndex.size(); i++) {
+            int index = (i%2==0) ? pairIndex.get(i)-3 : pairIndex.get(i)+2;
+            pairIndex.set(i,index);
+        }
+
+        // adding extra indexes to handle loose ends
+        pairIndex.add(999999999);
+        pairIndex.add(999999999);
+
+        // initial pointers
+        int x = 0;
+        int y = 1;
+        int iterator = 0;
+        int first = pairIndex.get(x);
+        int last = pairIndex.get(y);
+
+        // appending data over the pairs
+        while (iterator < (pairIndex.size() / 2) - 1) {
+            for (int i = first; i < last; i++)
+                fileLines.set(i,prefix+fileLines.get(i));
+
+            x = x + 2;
+            y = y + 2;
+            first = pairIndex.get(x);
+            last = pairIndex.get(y);
+            iterator++;
+        }
+
+        return fileLines;
+    }
+
 
     public static void PairSequencerMode(ArrayList<File> banFiles) {
         for (int i = 0; i < banFiles.size(); i++) {
