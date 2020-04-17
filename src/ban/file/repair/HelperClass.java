@@ -452,7 +452,7 @@ public class HelperClass {
 
         // appending data over the pairs
         while (iterator < (pairIndex.size() / 2) - 1) {
-            for (int i = first; i < last; i++)
+            for (int i = first; i <=last; i++)
                 fileLines.set(i,prefix+fileLines.get(i));
 
             x = x + 2;
