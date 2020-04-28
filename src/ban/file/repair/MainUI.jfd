@@ -13,11 +13,11 @@
        <class>org.jdesktop.layout.GroupLayout</class>
        <void method="setProperty">
         <string>$horizontalGroup</string>
-        <string>par l {seq {par l {seq {space :p:40:p, par l {comp jScrollPane1::l:p:556:p, seq {space :p:75:p, par l {comp sequencerTF::l:p::p, seq l {space :p:123:p, comp ascendingButton:::p::p}, seq l {par l {seq {space :p:254:p, comp descendingButton:::p::p, space :p:22:p}, seq t {par l {comp jLabel4:::p::p, comp jLabel6::l:p::p, comp jLabel3::l:p::p, comp jLabel5:::p::p, comp jLabel7::l:p::p, comp label1::l:p::p}, space :p:11:p, par t {comp incDecTextField:::p:58:p, comp replaceTextField:::p:58:p}, space u:::p}}, par l {comp incDecPlus:::p:94:p, comp deleteButton:::p:94:p, comp sequenceButton:::p:92:p, comp deletePartButton::l:p:94:p, comp partSequencerButton::l:p:94:p, comp jButton1::l:p:94:p, comp textField1::l:p::p, comp replaceActionButton:::p::p}}}}, comp status::l:p:556:p}}, seq l {space :p:221:p, comp jLabel1:::p::p}}, space ::67:x}, seq t {space :0:0:x, comp jLabel2:::p::p, space :p:285:p}}</string>
+        <string>par l {seq {par l {seq {space :p:40:p, par l {comp jScrollPane1::l:p:556:p, seq {space :p:75:p, par l {comp sequencerTF::l:p::p, seq l {space :p:123:p, comp ascendingButton:::p::p}, seq l {par l {seq {space :p:254:p, comp descendingButton:::p::p, space :p:22:p}, seq t {par l {comp jLabel4:::p::p, comp jLabel6::l:p::p, comp jLabel3::l:p::p, comp jLabel5:::p::p, comp jLabel7::l:p::p, comp label1::l:p::p}, space :p:11:p, par t {comp incDecTextField:::p:58:p, comp replaceTextField:::p:58:p}, space u:::p}}, par l:::p {comp incDecPlus::::94:x, comp deleteButton::::94:x, comp sequenceButton:::p:92:p, comp deletePartButton::l::94:x, comp partSequencerButton::l::94:x, comp jButton1::l::94:x, comp textField1::l:p::p, comp replaceActionButton::l::94:x}}}}, comp status::l:p:556:p}}, seq l {space :p:221:p, comp jLabel1:::p::p}}, space ::67:x}, seq t {space :0:0:x, comp jLabel2:::p::p, space :p:285:p}}</string>
        </void>
        <void method="setProperty">
         <string>$verticalGroup</string>
-        <string>par l {seq t {space :::p, comp jLabel1:::p::p, space :::p, comp jLabel2:::p::p, space :p:26:p, par b {comp descendingButton::b:p::p, comp sequencerTF::b:p:30:p, comp ascendingButton::b:p::p, comp sequenceButton::b:p:25:p}, space s:::p, par b {comp jLabel3::b:p:30:p, comp deleteButton::b:p:25:p}, space u:::p, par b {comp jLabel4::b:p:30:p, comp deletePartButton::b:p:25:p}, space u:::p, par b {comp jLabel5::b:p:30:p, comp partSequencerButton::b:p:25:p}, space :p:13:p, par t {comp jButton1:::p:30:p, comp jLabel6:::p:30:p}, space u:::p, par b {comp jLabel7::b:p:30:p, comp incDecPlus::b:p:30:p, comp incDecTextField::b:p:28:p}, space u:::p, par b {comp label1::b:p::p, comp replaceTextField::b:p:28:p, comp replaceActionButton::b:p::p}, space :::x, par l {seq t {comp status:::p:30:p, space s:::p, comp jScrollPane1:::p:247:p, space :p:29:p}, seq t {comp textField1:::p::p, space :::p}}}}</string>
+        <string>par l {seq t {space :::p, comp jLabel1:::p::p, space :::p, comp jLabel2:::p::p, space :p:26:p, par b {comp descendingButton::b:p::p, comp sequencerTF::b:p:30:p, comp ascendingButton::b:p::p, comp sequenceButton::b:p:25:p}, space s:::p, par b {comp jLabel3::b:p:30:p, comp deleteButton::b:p:25:p}, space u:::p, par b {comp jLabel4::b:p:30:p, comp deletePartButton::b:p:25:p}, space u:::p, par b {comp jLabel5::b:p:30:p, comp partSequencerButton::b:p:25:p}, space :p:13:p, par t {comp jButton1:::p:30:p, comp jLabel6:::p:30:p}, space u:::p, par b {comp jLabel7::b:p:30:p, comp incDecPlus::b:p:30:p, comp incDecTextField::b:p:28:p}, space u:::p, par b {comp label1::b:p::p, comp replaceTextField::b:p:28:p, comp replaceActionButton::l::25:x}, space :::p, par l {seq t {comp status:::p:30:p, space s:::p, comp jScrollPane1:::p:247:p, space :p:29:p}, seq t {comp textField1:::p::p, space :::p}}}}</string>
        </void>
       </object>
       <void method="setProperty">
@@ -489,14 +489,19 @@
         </void>
         <void method="setProperty">
          <string>foreground</string>
-         <object class="java.awt.Color" field="blue"/>
+         <object class="java.awt.Color">
+          <int>0</int>
+          <int>102</int>
+          <int>204</int>
+          <int>255</int>
+         </object>
         </void>
         <void method="setProperty">
          <string>font</string>
          <object class="java.awt.Font">
-          <string>Arial</string>
-          <int>0</int>
-          <int>24</int>
+          <string>Malgun Gothic</string>
+          <int>1</int>
+          <int>20</int>
          </object>
         </void>
         <void property="name">

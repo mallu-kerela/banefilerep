@@ -153,8 +153,8 @@ public class MainUI extends javax.swing.JFrame {
 
         //---- label1 ----
         label1.setText("Replace (R5)");
-        label1.setForeground(Color.blue);
-        label1.setFont(new Font("Arial", Font.PLAIN, 24));
+        label1.setForeground(new Color(0, 102, 204));
+        label1.setFont(new Font("Malgun Gothic", Font.BOLD, 20));
 
         //---- replaceActionButton ----
         replaceActionButton.setText("START");
@@ -196,15 +196,15 @@ public class MainUI extends javax.swing.JFrame {
                                                         .addComponent(incDecTextField, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(replaceTextField, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
                                                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)))
-                                            .addGroup(contentPaneLayout.createParallelGroup()
-                                                .addComponent(incPlus, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(deleteButton, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(incPlus, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                                .addComponent(deleteButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                                                 .addComponent(sequenceButton, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(deletePartButton, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(partSequencerButton, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(deletePartButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                                .addComponent(partSequencerButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                                .addComponent(jButton1, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                                                 .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(replaceActionButton)))))
+                                                .addComponent(replaceActionButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)))))
                                 .addComponent(status, GroupLayout.PREFERRED_SIZE, 556, GroupLayout.PREFERRED_SIZE)))
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGap(221, 221, 221)
@@ -253,8 +253,8 @@ public class MainUI extends javax.swing.JFrame {
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label1)
                         .addComponent(replaceTextField, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(replaceActionButton))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(replaceActionButton, GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(contentPaneLayout.createParallelGroup()
                         .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
                             .addComponent(status, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
