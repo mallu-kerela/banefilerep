@@ -764,4 +764,53 @@ public class HelperClass {
 
         return fileLines;
     }
+
+    public static void replaceValuesAfterZ(ArrayList<File> banFiles, String valueToBeSet) {
+        for (int i = 0; i < banFiles.size(); i++) {
+            ArrayList<String> fileLines = new ArrayList<>();
+            ArrayList<String> finalData = new ArrayList<>();
+            ArrayList<Integer> pairIndexes = new ArrayList<>();
+            File file = banFiles.get(i);
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(file.getAbsolutePath()));
+                String line = reader.readLine();
+                while (line != null) {
+                    fileLines.add(line);
+                    line = reader.readLine();
+                }
+                reader.close();
+                for (int p = 0; p < fileLines.size(); p++) {
+                    if (((String)fileLines.get(p)).contains("RRRRR"))
+                        pairIndexes.add(Integer.valueOf(p));
+                }
+                if (pairIndexes.size() > 0 && pairIndexes.size() % 2 == 0) {
+                    MainUI.filesOperated.add(banFiles.get(i));
+                    finalData = replaceValuesAfterZMode(fileLines, pairIndexes, valueToBeSet);
+                    overriteFile(finalData, banFiles.get(i));
+                } else {
+                    continue;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (fileLines != null)
+                fileLines.clear();
+            continue;
+        }
+    }
+
+    public static ArrayList<String> replaceValuesAfterZMode(ArrayList<String> fileLines, ArrayList<Integer> pairIndexes, String valueToBeSet) {
+        ArrayList<String> finalData = fileLines;
+        int i;
+        for (i = 0; i < pairIndexes.size(); i += 2) {
+            for (int j = ((Integer)pairIndexes.get(i)).intValue(); j <= ((Integer)pairIndexes.get(i + 1)).intValue(); j++) {
+                String line = finalData.get(j);
+                String stringToBeReplaced = line.substring(1, line.indexOf(' '));
+                String finalLine = ((String)finalData.get(j)).replaceFirst(stringToBeReplaced, valueToBeSet);
+                finalData.set(j, finalLine);
+            }
+        }
+        return finalData;
+    }
+
 }
