@@ -214,6 +214,7 @@ public class HelperClass {
             finalData.add(almostFinalData.get(i));
             if (almostFinalData.get(i).equals(mTHREE)) {
                 if (!flag) {
+                    finalData.add("\n"); // adding extra line before M0
                     finalData.add(mZERO);
                     flag = true;
                 }
