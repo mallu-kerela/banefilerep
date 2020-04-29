@@ -34,7 +34,7 @@ public class MainUI extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    // Generated using JFormDesigner Evaluation license - Manu Jain
+    // Generated using JFormDesigner Evaluation license - asdasd
     private void initComponents() {
         jScrollPane1 = new JScrollPane();
         textArea = new JTextArea();
@@ -56,6 +56,10 @@ public class MainUI extends javax.swing.JFrame {
         incDecTextField = new JTextField();
         incPlus = new JButton();
         jLabel2 = new JLabel();
+        label1 = new JLabel();
+        replaceTextField = new JTextField();
+        textField1 = new JTextField();
+        replaceActionButton = new JButton();
 
         //======== this ========
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -75,7 +79,7 @@ public class MainUI extends javax.swing.JFrame {
         //---- jLabel1 ----
         jLabel1.setFont(new Font("Malgun Gothic", Font.BOLD, 24));
         jLabel1.setForeground(new Color(51, 51, 0));
-        jLabel1.setText("Ban File Repair VER 5.3");
+        jLabel1.setText("Ban File Repair " + Constants.VERSION);
 
         //---- sequencerTF ----
         sequencerTF.setFont(new Font("Malgun Gothic", Font.BOLD, 20));
@@ -147,6 +151,15 @@ public class MainUI extends javax.swing.JFrame {
         jLabel2.setForeground(new Color(51, 51, 0));
         jLabel2.setText("Manu Jain");
 
+        //---- label1 ----
+        label1.setText("Replace (R5)");
+        label1.setForeground(new Color(0, 102, 204));
+        label1.setFont(new Font("Malgun Gothic", Font.BOLD, 20));
+
+        //---- replaceActionButton ----
+        replaceActionButton.setText("START");
+        replaceActionButton.addActionListener(e -> replaceActionButtonActionPerformed(e));
+
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
@@ -176,24 +189,29 @@ public class MainUI extends javax.swing.JFrame {
                                                         .addComponent(jLabel6)
                                                         .addComponent(jLabel3)
                                                         .addComponent(jLabel5)
-                                                        .addComponent(plusMinusLabel))
+                                                        .addComponent(plusMinusLabel)
+                                                        .addComponent(label1))
                                                     .addGap(11, 11, 11)
-                                                    .addComponent(incDecTextField, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(incDecTextField, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(replaceTextField, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
                                                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)))
-                                            .addGroup(contentPaneLayout.createParallelGroup()
-                                                .addComponent(incPlus, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(deleteButton, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(incPlus, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                                .addComponent(deleteButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                                                 .addComponent(sequenceButton, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(deletePartButton, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(partSequencerButton, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)))))
+                                                .addComponent(deletePartButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                                .addComponent(partSequencerButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                                .addComponent(jButton1, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                                .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(replaceActionButton, GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)))))
                                 .addComponent(status, GroupLayout.PREFERRED_SIZE, 556, GroupLayout.PREFERRED_SIZE)))
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGap(221, 221, 221)
                             .addComponent(jLabel1)))
                     .addContainerGap(67, Short.MAX_VALUE))
                 .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
-                    .addGap(0, 289, Short.MAX_VALUE)
+                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jLabel2)
                     .addGap(285, 285, 285))
         );
@@ -231,11 +249,21 @@ public class MainUI extends javax.swing.JFrame {
                         .addComponent(plusMinusLabel, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                         .addComponent(incPlus, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                         .addComponent(incDecTextField, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                    .addComponent(status, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 247, GroupLayout.PREFERRED_SIZE)
-                    .addGap(29, 29, 29))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(label1)
+                        .addComponent(replaceTextField, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(replaceActionButton, GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(contentPaneLayout.createParallelGroup()
+                        .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                            .addComponent(status, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 247, GroupLayout.PREFERRED_SIZE)
+                            .addGap(29, 29, 29))
+                        .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                            .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())))
         );
         pack();
         setLocationRelativeTo(getOwner());
@@ -334,6 +362,20 @@ public class MainUI extends javax.swing.JFrame {
         }
     }
 
+    private void replaceActionButtonActionPerformed(ActionEvent e) {
+        if (this.replaceTextField.getText().equals(""))
+            return;
+        basicInit();
+        if (this.banFiles.size() == 0) {
+            this.status.setText("Zero BAN Files Present");
+        } else {
+            String value = this.replaceTextField.getText();
+            HelperClass.replaceValuesAfterZ(this.banFiles, value);
+            this.status.setText("Complete");
+            fileStatusUpdate();
+        }
+    }
+
     private void fileStatusUpdate()
     {
         String data = "";
@@ -400,7 +442,7 @@ public class MainUI extends javax.swing.JFrame {
     public static ArrayList<File> filesOperated = new ArrayList<>();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Manu Jain
+    // Generated using JFormDesigner Evaluation license - asdasd
     private JScrollPane jScrollPane1;
     private JTextArea textArea;
     private JLabel jLabel1;
@@ -421,5 +463,9 @@ public class MainUI extends javax.swing.JFrame {
     private JTextField incDecTextField;
     private JButton incPlus;
     private JLabel jLabel2;
+    private JLabel label1;
+    private JTextField replaceTextField;
+    private JTextField textField1;
+    private JButton replaceActionButton;
     // End of variables declaration//GEN-END:variables
 }
